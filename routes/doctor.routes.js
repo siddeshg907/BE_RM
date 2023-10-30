@@ -69,7 +69,7 @@ doctorRouter.put("/update/:id",async (req,res)=>{
 
 doctorRouter.delete("/delete/:id",async (req,res)=>{
     try {
-        const doctor=await DoctorModel.findByIdAndDelete(
+        const doctor=await DoctorModel.findByIdAndRemove(
             req.params.id,
         )
         if(!doctor){
