@@ -50,7 +50,7 @@ doctorRouter.get("/",async(req,res)=>{
 })
 
 
-doctorRouter.put("/update/:id",async (req,res)=>{
+doctorRouter.put("/update?:id",async (req,res)=>{
     try {
         const {name,imageURL,specialization,experience,location,date,slots,fee}=req.body
         const doctor=await DoctorModel.findByIdAndUpdate(
@@ -67,7 +67,7 @@ doctorRouter.put("/update/:id",async (req,res)=>{
     }
 })
 
-doctorRouter.delete("/delete/:id",async (req,res)=>{
+doctorRouter.delete("/delete?:id",async (req,res)=>{
     try {
         const doctor=await DoctorModel.findByIdAndRemove(
             req.params.id,
